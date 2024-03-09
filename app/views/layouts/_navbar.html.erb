@@ -1,0 +1,71 @@
+<nav class="side-nav">
+      
+  <ul class="side-ul">
+    <p class="nav-title">
+      <i class="fa-solid fa-circle-user fa-xl fa-nav" style="color: #c587ae;"></i>
+      <%= current_user.email %>
+    </p>
+    <li class="side-li">
+        <span class="pin-and-link">
+          <span class="emoji-pin">
+            <i class="fa-solid fa-plus fa-nav" style="color: #e3008c;"></i>
+          </span>
+          <%= link_to "Add Category", new_category_path %>
+        </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-day fa-nav" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Today", today_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-week" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Upcoming", upcoming_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-check" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Completed", completed_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-xmark" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Overdue", overdue_tasks_path %>
+      </span>
+    </li>
+
+    <br />
+    <p class="nav-title"><strong><%= link_to "My Plans", categories_path, class: "link" %></strong></p>
+    <% if @categories %>
+      <% @categories.each do |category| %>
+        <li class="side-li">
+
+          <span class="pin-and-link">
+            <span class="emoji-pin">📌</span>
+            <%= link_to category.name, category_path(category) %> 
+          </span>
+
+        </li>
+      <% end %>
+    <% end %>
+
+    <li class="side-button"><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "signout" %></li>
+  </ul>
+
+</nav>

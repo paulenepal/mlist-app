@@ -1,0 +1,66 @@
+<%= render "layouts/navbar" %>
+
+<div class="spacing">
+  
+  <div class="main-container">
+
+      <h1>🎯 My Plans</h1><br />
+      <p class="add">
+        <%= link_to new_category_path, class: "add-link" do %>
+          <i class="fa-solid fa-plus fa-lg" style="color: #ff8787;"></i>
+          <span class="add-text">Add Category</span>
+        <% end %>
+      </p> <br />
+
+      <div class="table-container">
+        <table class="table">
+          <tbody>
+            <% if @categories.any? %>
+              <% @categories.each do |category| %>
+                <tr class="table-row">
+                  <td class="task-name">
+                    <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= category.name %></strong>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to new_category_task_path(category) do %> 
+                      <span class="add-text"><i class="fa-solid fa-plus" style="color: #ff8787;"></i></span>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to edit_category_path(category) do %> 
+                      <i class="fa-solid fa-pen" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">  
+                    <%= button_to category_path(category), method: :delete, onclick: "return confirm('Are you sure?');", class: "del-btn" do %>
+                      <i class="fa-solid fa-trash-can" style="color: rgb(90, 5, 5);"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to category_path(category) do %>
+                      <i class="fa-solid fa-ellipsis-vertical" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+                  </span>
+
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="2">Add a category to start your productivity! </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+
+      <br>  
+
+    
+  </div>
+</div>

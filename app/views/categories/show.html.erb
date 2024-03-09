@@ -1,0 +1,77 @@
+<%= render "layouts/navbar" %>
+<div class="spacing">
+  <div class="main-container">
+  
+    <h1> <%= @category.name %> </h1>
+    <p class="transparent-text"> Created: <%= format_datetime(@category.created_at) %> </p><br />
+
+    <div class ="add">
+      <%= link_to new_category_task_path(@category), class: "add-link" do %>
+        <i class="fa-solid fa-plus fa-lg" style="color: #ff8787;"></i>
+        <span class="add-text">Add Task</span>
+      <% end %>
+    </div>
+
+    <p>
+      <div class="table-container">
+        <table class="table">
+          <tbody>
+            <% if @category.tasks.any? %>
+              <% @category.tasks.each do |task| %>
+                <tr class="table-row">
+                  <td class="task-btn">
+                    <%= form_with model: task, method: :patch, url: task_path(task.id) do |form| %>
+                      <%= form.check_box :completed, onchange: "this.form.submit()" %>
+                    <% end %>
+                  </td>
+
+                  <td class="task-name">
+                    <%= task.name %>
+                    <p class="desc">
+                      <% if task.description.present? || task.due_date.present? %>
+                        <% if task.description.present? %>
+                          <i class="fa-regular fa-note-sticky"></i> <%= task.description %>
+                        <% end %>
+
+                        <% if task.due_date.present? %>
+                          <i class="fa-regular fa-calendar"></i> <%= format_datetime(task.due_date) %>
+                        <% end %>
+                      <% end %>
+                    </p>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to edit_task_path(task) do %> 
+                      <i class="fa-solid fa-pen" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">  
+                    <%= button_to task_path(task), method: :delete, onclick: "return confirm('Are you sure?');", class: "del-btn" do %>
+                      <i class="fa-solid fa-trash-can" style="color: rgb(90, 5, 5);"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to task_path(task) do %>
+                      <i class="fa-solid fa-ellipsis-vertical" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="2">Add task to start your productivity! </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+
+    </p>
+    <br />
+
+  </div>
+</div>

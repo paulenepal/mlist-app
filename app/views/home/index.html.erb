@@ -1,0 +1,20 @@
+<nav id="header">
+    <%= image_tag('logo.png', class: 'logo') %>
+    <ul class="topnav">
+      <li class="topnav-li"><a href="#">Features</a></li>
+      <li class="topnav-li"><a href="#">Resources</a></li>
+      <li class="topnav-li"><a href="#">Pricing</a></li>
+      <li class="topnav-li"><span class="login"><%= link_to "Log in", new_user_session_path %></span></li>
+    </ul>
+</nav>
+
+<div class="home">
+  <p class="title">
+    <h2 class="">Efficiently organize your<p> work and life, finally.</p></h2>
+    <h4>Become focused, organized, and calm with MinimaList.<p>Your go-to journal and planning app. </p></h4>
+  </p>
+
+  <p class="button">
+    <span><%= link_to "Get Started", new_user_registration_path %></span>
+  </p>
+</div>

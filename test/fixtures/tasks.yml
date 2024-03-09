@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+task_one:
+  name: First Task
+  description: First Task Desc
+  due_date: 2024-02-23 19:07:28
+  category_id: 1
+  user_id: 1
+  completed: false
+
+tast_two:
+  name: Second Task
+  description: Second task desc
+  due_date: 2024-02-23 19:07:28
+  category_id: 2
+  user_id: 2
+  completed: false

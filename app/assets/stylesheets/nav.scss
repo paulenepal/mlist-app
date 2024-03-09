@@ -1,0 +1,108 @@
+// mainly for the side nav
+
+@import 'variables';
+
+body {
+    margin: 0;
+  }
+
+.nav-title {
+  margin: 18px 0 14px 5px;
+  padding: 8px 18px;
+  width: 100%;
+  color: black;
+
+  .link {
+    width: 100%;
+  }
+  
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
+
+  .fa-nav {
+    margin-right: 5px;
+  }
+
+}
+
+.side-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 18%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+    .side-li a {
+      display: block;
+      color: #000;
+      padding: 8px 25px;
+      text-decoration: none;
+
+      &:active {
+        background-color: #04AA6D;
+        color: white;
+      }
+        
+      &:hover:not(.active) {
+        background-color: $blue_green;
+        color: white;
+        border-radius: 10px;
+      }
+    }
+  .side-button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 3px 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    .signout {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      background-color: $pink;
+      font-weight: 500;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $rbrown;
+        color: $cream;
+      }
+    }
+  }
+}
+
+
+.pin-and-link {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover:not(.active) {
+    background-color: $blue_green;
+    color: white;
+    border-radius: 10px;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  .emoji-pin {
+    margin-left: 35px;
+  }
+}
+

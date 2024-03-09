@@ -1,0 +1,88 @@
+// styling for new/edit forms (task_cat & task)
+
+@import 'variables';
+
+// task category form
+input[name="category[name]"], input[name="task[name]"],
+input[name="task[description]"], input[name="task[due_date]"] {
+  font-family: inherit;
+  padding: 10px;
+  width: 50%;
+  // border-radius: 0.375rem;
+  border: none;
+  border-bottom: 2px solid $pink;
+  font-size: 18px;
+  outline: none;
+
+  &:focus {
+    border-bottom: 2px solid $rbrown;
+  }
+
+}
+
+label[for="task_due_date"] {
+  color: gray;
+  margin-left: 10px;
+}
+
+label[for="task_completed"] {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500;
+  color: red;
+  font-size: 18px;
+}
+
+input[name="task[completed]"] {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+// sharing [task cat and task]
+.button {
+  margin-top: 18px;
+
+  input[type=submit] {
+    font-family: inherit;
+    padding: 8px 18px;
+    background-color: $bpink;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    border: 0.5px transparent;
+
+    &:hover {
+      background-color: $rose;
+      color: white;
+      scale: 102%;
+    }
+  }
+}
+
+.back-container {
+  width: 100%;
+
+  .bck-btn {
+    width: 50px;
+    padding: 8px 18px; 
+    background-color: $bpink;  
+    font-size: 0.875rem; 
+    border-radius: 0.375rem; 
+    box-shadow: 0 2px 4px $hover-color;
+
+      &:hover {
+        background-color: $rose;
+      }
+    }
+
+    .fa-chevron-left {
+      color: $cream;
+      text-align: center;
+    }
+
+}
