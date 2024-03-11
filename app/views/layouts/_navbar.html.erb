@@ -51,14 +51,14 @@
     </li>
 
     <br />
-    <p class="nav-title"><strong><%= link_to "My Plans", categories_path, class: "link" %></strong></p>
+    <p class="nav-title"><strong><%= link_to "My Plans", categories_path, class: "link", style: "color: #944E63;" %> </strong></p>
     <% if @categories %>
       <% @categories.each do |category| %>
         <li class="side-li">
 
           <span class="pin-and-link">
             <span class="emoji-pin">📌</span>
-            <%= link_to category.name, category_path(category) %> 
+            <%= link_to truncate(category.name, length: 20), category_path(category) %> 
           </span>
 
         </li>
