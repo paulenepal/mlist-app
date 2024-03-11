@@ -7,8 +7,8 @@
 
     <div class ="add">
       <%= link_to new_category_task_path(@category), class: "add-link" do %>
-        <i class="fa-solid fa-plus fa-lg" style="color: #ff8787;"></i>
-        <span class="add-text">Add Task</span>
+        <i class="fa-solid fa-plus" style="color: #ff8787;"></i>
+        <span class="add-text" style="color: #76453B;">Add Task</span>
       <% end %>
     </div>
 
@@ -62,6 +62,7 @@
               <% end %>
             <% else %>
               <tr>
+                <br>
                 <td colspan="2">Add task to start your productivity! </td>
               </tr>
             <% end %>
