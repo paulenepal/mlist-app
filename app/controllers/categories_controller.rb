@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    user_not_authorized(@category) # not sure why this doesn't work if i put this on before action
+    user_not_authorized(@category)
   end
 
   def new
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    user_not_authorized(@category) # not sure why this doesn't work if i put this on before action
+    user_not_authorized(@category)
   end
 
   def update
