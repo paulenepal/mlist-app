@@ -7,8 +7,8 @@
       <h1>🎯 My Plans</h1><br />
       <p class="add">
         <%= link_to new_category_path, class: "add-link" do %>
-          <i class="fa-solid fa-plus fa-lg" style="color: #ff8787;"></i>
-          <span class="add-text">Add Category</span>
+          <i class="fa-solid fa-plus" style="color: #ff8787;"></i>
+          <span class="add-text" style="color: #76453B;">Add Category</span>
         <% end %>
       </p> <br />
 
@@ -19,7 +19,7 @@
               <% @categories.each do |category| %>
                 <tr class="table-row">
                   <td class="task-name">
-                    <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= category.name %></strong>
+                    <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= link_to category.name, category_path(category), style: "color: #944E63;" %></strong>
                   </td>
 
                   <td class="task-btn">
@@ -40,17 +40,13 @@
                     <% end %>
                   </td>
 
-                  <td class="task-btn">
-                    <%= link_to category_path(category) do %>
-                      <i class="fa-solid fa-ellipsis-vertical" style="color: #43766C;"></i>
-                    <% end %>
-                  </td>
                   </span>
 
                 </tr>
               <% end %>
             <% else %>
               <tr>
+                <br />
                 <td colspan="2">Add a category to start your productivity! </td>
               </tr>
             <% end %>
