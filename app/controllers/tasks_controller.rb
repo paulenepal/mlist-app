@@ -71,7 +71,7 @@ class TasksController < ApplicationController
   end
 
   def user_not_authorized(task)
-    unless task.user_id == current_user.id
+    unless task.user == current_user
       redirect_to categories_path, alert: "Oops! The task you're trying to access doesn't exist from you list. 👻"
     end
   end
